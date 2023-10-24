@@ -11,14 +11,6 @@ jobs:
   build-deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: aws-actions/configure-aws-credentials@v1.7.0
-        with:
-          role-to-assume: arn:aws:iam::292556232487:role/GitHubAction-AssumeRoleWithAction
-          role-session-name: GitHub_to_AWS_via_FederatedOIDC
-          aws-region: us-east-1
-      # Hello from AWS: WhoAmI
-      - name: Sts GetCallerIdentity
-        run: aws sts get-caller-identity
       - uses: actions/checkout@v3
       - uses: actions/setup-python@v2
       - uses: aws-actions/setup-sam@v1
@@ -36,6 +28,6 @@ jobs:
 # Run Unit tests- Specify unit tests here 
 
 # sam deploy
-      - run: sam deploy --no-confirm-changeset --no-fail-on-empty-changeset --stack-name sam-hello-world ##--s3-bucket ##s3-bucket## --capabilities CAPABILITY_IAM --region ##region## 
+      - run: sam deploy --no-confirm-changeset --no-fail-on-empty-changeset --stack-name sam-hello-world --image-repository 292556232487.dkr.ecr.us-east-1.amazonaws.com/helloworld ##--s3-bucket ##s3-bucket## --capabilities CAPABILITY_IAM --region ##region## 
 
       
