@@ -19,7 +19,6 @@ jobs:
       # Hello from AWS: WhoAmI
       -name: Sts GetCallerIdentity
         run: aws sts get-caller-identity
-
       # sam build 
       - run: sam build --use-container
 
