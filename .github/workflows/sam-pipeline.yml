@@ -17,7 +17,7 @@ jobs:
           role-session-name: GitHub_to_AWS_via_FederatedOIDC
           aws-region: us-east-2
       # Hello from AWS: WhoAmI
-      -name: Sts GetCallerIdentity
+      - name: Sts GetCallerIdentity
         run: aws sts get-caller-identity
       # sam build 
       - run: sam build --use-container
