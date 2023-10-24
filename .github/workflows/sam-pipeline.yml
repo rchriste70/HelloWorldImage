@@ -23,7 +23,7 @@ jobs:
       - name: Sts GetCallerIdentity
         run: aws sts get-caller-identity
       # sam build 
-      - run: sam build --use-container
+      - run: sam build ##--use-container
 
 # Run Unit tests- Specify unit tests here 
 
