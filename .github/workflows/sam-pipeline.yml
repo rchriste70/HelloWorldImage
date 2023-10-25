@@ -37,7 +37,7 @@ jobs:
           role-session-name: GitHub_to_AWS_via_FederatedOIDC
           aws-region: us-west-2
 
-      - run: sam build --aws-region us-west-2
+      - run: sam build --region us-west-2
     
       - name: Deploy to Bob's dev account, us-west-2
         run: sam deploy --template .aws-sam/build/template.yaml --no-confirm-changeset --no-fail-on-empty-changeset --stack-name sam-hello-world --image-repository 292556232487.dkr.ecr.eu-west-2.amazonaws.com/helloworld --capabilities CAPABILITY_IAM --region us-west-2 
