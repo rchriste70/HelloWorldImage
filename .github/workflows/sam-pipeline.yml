@@ -31,7 +31,7 @@ jobs:
       - name: Deploy to Bob's dev account, us-east-1
         run: sam deploy --template .aws-sam/build/template.yaml --no-confirm-changeset --no-fail-on-empty-changeset --stack-name sam-hello-world --image-repository 292556232487.dkr.ecr.us-east-1.amazonaws.com/helloworld --capabilities CAPABILITY_IAM --region us-east-1 
 
-      - name: Deploy to Bob's dev account, eu-west-1
-        run: sam deploy --template .aws-sam/build/template.yaml --no-confirm-changeset --no-fail-on-empty-changeset --stack-name sam-hello-world --image-repository 292556232487.dkr.ecr.us-east-1.amazonaws.com/helloworld --capabilities CAPABILITY_IAM --region eu-west-1 
+      #- name: Deploy to Bob's dev account, eu-west-1
+      #  run: sam deploy --template .aws-sam/build/template.yaml --no-confirm-changeset --no-fail-on-empty-changeset --stack-name sam-hello-world --image-repository 292556232487.dkr.ecr.us-east-1.amazonaws.com/helloworld --capabilities CAPABILITY_IAM --region eu-west-1 
 
       
